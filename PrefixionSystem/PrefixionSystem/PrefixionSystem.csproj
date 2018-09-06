@@ -1,0 +1,311 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{053FED42-5D2E-4D4E-B2A2-B2098998BB1B}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>PrefixionSystem</RootNamespace>
+    <AssemblyName>PrefixionSystem</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ControlAstro">
+      <HintPath>Dll\ControlAstro.dll</HintPath>
+    </Reference>
+    <Reference Include="CSkin">
+      <HintPath>Dll\CSkin.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib">
+      <HintPath>Dll\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net">
+      <HintPath>Dll\LogLib\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data">
+      <HintPath>packages\MySql.Data.6.9.6\lib\net40\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpCompress">
+      <HintPath>Dll\SharpCompress.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.Install" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.SQLite">
+      <HintPath>Dll\System.Data.SQLite.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DataModule\ComboBoxHelper.cs" />
+    <Compile Include="DataModule\CommonFunc.cs" />
+    <Compile Include="DataModule\EBD.cs" />
+    <Compile Include="DataModule\EBM.cs" />
+    <Compile Include="DataModule\HttpServer.cs" />
+    <Compile Include="DataModule\IniFiles.cs" />
+    <Compile Include="DataModule\LogHelper.cs" />
+    <Compile Include="DataModule\MixLogHelper.cs" />
+    <Compile Include="DataModule\MySQLDBHelper.cs" />
+    <Compile Include="DataModule\responseXML.cs" />
+    <Compile Include="DataModule\SingletonInfo.cs" />
+    <Compile Include="DataModule\StructClass.cs" />
+    <Compile Include="DataModule\TarHelper.cs" />
+    <Compile Include="DataModule\XmlSerialize.cs" />
+    <Compile Include="FrmPart\Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPart\Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmPart\LogTrace.cs" />
+    <Compile Include="FrmPart\mainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPart\mainForm.Designer.cs">
+      <DependentUpon>mainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmPart\MessageShowForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPart\MessageShowForm.Designer.cs">
+      <DependentUpon>MessageShowForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmPart\AdapterSetForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPart\AdapterSetForm.Designer.cs">
+      <DependentUpon>AdapterSetForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmPart\ServerIPSetForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPart\ServerIPSetForm.Designer.cs">
+      <DependentUpon>ServerIPSetForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmPart\TmpFolderSetForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPart\TmpFolderSetForm.Designer.cs">
+      <DependentUpon>TmpFolderSetForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FrmPart\Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmPart\mainForm.resx">
+      <DependentUpon>mainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmPart\MessageShowForm.resx">
+      <DependentUpon>MessageShowForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmPart\AdapterSetForm.resx">
+      <DependentUpon>AdapterSetForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmPart\ServerIPSetForm.resx">
+      <DependentUpon>ServerIPSetForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmPart\TmpFolderSetForm.resx">
+      <DependentUpon>TmpFolderSetForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="packages\HP-Socket.5.0.2\HP-Socket.5.0.2.nupkg" />
+    <None Include="packages\HP-Socket.x64.5.0.2\build\HP-Sockertx64.targets" />
+    <None Include="packages\HP-Socket.x64.5.0.2\content\HPSockertx64\ssl-cert\ca.crt" />
+    <None Include="packages\HP-Socket.x64.5.0.2\content\HPSockertx64\ssl-cert\ca.key" />
+    <None Include="packages\HP-Socket.x64.5.0.2\content\HPSockertx64\ssl-cert\ca.pem" />
+    <None Include="packages\HP-Socket.x64.5.0.2\content\HPSockertx64\ssl-cert\client.cer" />
+    <None Include="packages\HP-Socket.x64.5.0.2\content\HPSockertx64\ssl-cert\client.crt" />
+    <None Include="packages\HP-Socket.x64.5.0.2\content\HPSockertx64\ssl-cert\client.csr" />
+    <None Include="packages\HP-Socket.x64.5.0.2\content\HPSockertx64\ssl-cert\client.key" />
+    <None Include="packages\HP-Socket.x64.5.0.2\content\HPSockertx64\ssl-cert\client.pem" />
+    <None Include="packages\HP-Socket.x64.5.0.2\content\HPSockertx64\ssl-cert\server.cer" />
+    <None Include="packages\HP-Socket.x64.5.0.2\content\HPSockertx64\ssl-cert\server.crt" />
+    <None Include="packages\HP-Socket.x64.5.0.2\content\HPSockertx64\ssl-cert\server.csr" />
+    <None Include="packages\HP-Socket.x64.5.0.2\content\HPSockertx64\ssl-cert\server.key" />
+    <None Include="packages\HP-Socket.x64.5.0.2\content\HPSockertx64\ssl-cert\server.pem" />
+    <None Include="packages\HP-Socket.x64.5.0.2\HP-Socket.x64.5.0.2.nupkg" />
+    <None Include="packages\HP-Socket.x86.5.0.2\build\HP-Sockertx86.targets" />
+    <None Include="packages\HP-Socket.x86.5.0.2\content\HPSockertx86\ssl-cert\ca.crt" />
+    <None Include="packages\HP-Socket.x86.5.0.2\content\HPSockertx86\ssl-cert\ca.key" />
+    <None Include="packages\HP-Socket.x86.5.0.2\content\HPSockertx86\ssl-cert\ca.pem" />
+    <None Include="packages\HP-Socket.x86.5.0.2\content\HPSockertx86\ssl-cert\client.cer" />
+    <None Include="packages\HP-Socket.x86.5.0.2\content\HPSockertx86\ssl-cert\client.crt" />
+    <None Include="packages\HP-Socket.x86.5.0.2\content\HPSockertx86\ssl-cert\client.csr" />
+    <None Include="packages\HP-Socket.x86.5.0.2\content\HPSockertx86\ssl-cert\client.key" />
+    <None Include="packages\HP-Socket.x86.5.0.2\content\HPSockertx86\ssl-cert\client.pem" />
+    <None Include="packages\HP-Socket.x86.5.0.2\content\HPSockertx86\ssl-cert\server.cer" />
+    <None Include="packages\HP-Socket.x86.5.0.2\content\HPSockertx86\ssl-cert\server.crt" />
+    <None Include="packages\HP-Socket.x86.5.0.2\content\HPSockertx86\ssl-cert\server.csr" />
+    <None Include="packages\HP-Socket.x86.5.0.2\content\HPSockertx86\ssl-cert\server.key" />
+    <None Include="packages\HP-Socket.x86.5.0.2\content\HPSockertx86\ssl-cert\server.pem" />
+    <None Include="packages\HP-Socket.x86.5.0.2\HP-Socket.x86.5.0.2.nupkg" />
+    <None Include="packages\log4net.2.0.8\log4net.2.0.8.nupkg" />
+    <None Include="packages\MySql.Data.6.9.6\.svn\all-wcprops" />
+    <None Include="packages\MySql.Data.6.9.6\.svn\entries" />
+    <None Include="packages\MySql.Data.6.9.6\.svn\prop-base\MySql.Data.6.9.6.nupkg.svn-base" />
+    <None Include="packages\MySql.Data.6.9.6\.svn\text-base\CHANGES.svn-base" />
+    <None Include="packages\MySql.Data.6.9.6\.svn\text-base\MySql.Data.6.9.6.nupkg.svn-base" />
+    <None Include="packages\MySql.Data.6.9.6\.svn\text-base\Readme.txt.svn-base" />
+    <None Include="packages\MySql.Data.6.9.6\CHANGES" />
+    <None Include="packages\MySql.Data.6.9.6\content\.svn\all-wcprops" />
+    <None Include="packages\MySql.Data.6.9.6\content\.svn\entries" />
+    <None Include="packages\MySql.Data.6.9.6\content\.svn\text-base\app.config.transform.svn-base" />
+    <None Include="packages\MySql.Data.6.9.6\content\.svn\text-base\web.config.transform.svn-base" />
+    <None Include="packages\MySql.Data.6.9.6\content\app.config.transform" />
+    <None Include="packages\MySql.Data.6.9.6\content\web.config.transform" />
+    <None Include="packages\MySql.Data.6.9.6\lib\.svn\all-wcprops" />
+    <None Include="packages\MySql.Data.6.9.6\lib\.svn\entries" />
+    <None Include="packages\MySql.Data.6.9.6\lib\net20-cf\.svn\all-wcprops" />
+    <None Include="packages\MySql.Data.6.9.6\lib\net20-cf\.svn\entries" />
+    <None Include="packages\MySql.Data.6.9.6\lib\net20-cf\.svn\prop-base\MySql.Data.CF.dll.svn-base" />
+    <None Include="packages\MySql.Data.6.9.6\lib\net20-cf\.svn\text-base\MySql.Data.CF.dll.svn-base" />
+    <None Include="packages\MySql.Data.6.9.6\lib\net20\.svn\all-wcprops" />
+    <None Include="packages\MySql.Data.6.9.6\lib\net20\.svn\entries" />
+    <None Include="packages\MySql.Data.6.9.6\lib\net20\.svn\prop-base\MySql.Data.dll.svn-base" />
+    <None Include="packages\MySql.Data.6.9.6\lib\net20\.svn\text-base\MySql.Data.dll.svn-base" />
+    <None Include="packages\MySql.Data.6.9.6\lib\net40\.svn\all-wcprops" />
+    <None Include="packages\MySql.Data.6.9.6\lib\net40\.svn\entries" />
+    <None Include="packages\MySql.Data.6.9.6\lib\net40\.svn\prop-base\MySql.Data.dll.svn-base" />
+    <None Include="packages\MySql.Data.6.9.6\lib\net40\.svn\text-base\MySql.Data.dll.svn-base" />
+    <None Include="packages\MySql.Data.6.9.6\lib\net45\.svn\all-wcprops" />
+    <None Include="packages\MySql.Data.6.9.6\lib\net45\.svn\entries" />
+    <None Include="packages\MySql.Data.6.9.6\lib\net45\.svn\prop-base\MySql.Data.dll.svn-base" />
+    <None Include="packages\MySql.Data.6.9.6\lib\net45\.svn\text-base\MySql.Data.dll.svn-base" />
+    <None Include="packages\MySql.Data.6.9.6\MySql.Data.6.9.6.nupkg" />
+    <None Include="packages\packages\.svn\all-wcprops" />
+    <None Include="packages\packages\.svn\entries" />
+    <None Include="packages\packages\.svn\prop-base\Newtonsoft.Json.dll.svn-base" />
+    <None Include="packages\packages\.svn\text-base\Newtonsoft.Json.dll.svn-base" />
+    <None Include="packages\packages\.svn\text-base\repositories.config.svn-base" />
+    <None Include="packages\packages\MySql.Data.6.9.6\.svn\all-wcprops" />
+    <None Include="packages\packages\MySql.Data.6.9.6\.svn\entries" />
+    <None Include="packages\packages\MySql.Data.6.9.6\.svn\prop-base\MySql.Data.6.9.6.nupkg.svn-base" />
+    <None Include="packages\packages\MySql.Data.6.9.6\.svn\text-base\CHANGES.svn-base" />
+    <None Include="packages\packages\MySql.Data.6.9.6\.svn\text-base\MySql.Data.6.9.6.nupkg.svn-base" />
+    <None Include="packages\packages\MySql.Data.6.9.6\.svn\text-base\Readme.txt.svn-base" />
+    <None Include="packages\packages\MySql.Data.6.9.6\CHANGES" />
+    <None Include="packages\packages\MySql.Data.6.9.6\content\.svn\all-wcprops" />
+    <None Include="packages\packages\MySql.Data.6.9.6\content\.svn\entries" />
+    <None Include="packages\packages\MySql.Data.6.9.6\content\.svn\text-base\app.config.transform.svn-base" />
+    <None Include="packages\packages\MySql.Data.6.9.6\content\.svn\text-base\web.config.transform.svn-base" />
+    <None Include="packages\packages\MySql.Data.6.9.6\content\app.config.transform" />
+    <None Include="packages\packages\MySql.Data.6.9.6\content\web.config.transform" />
+    <None Include="packages\packages\MySql.Data.6.9.6\lib\.svn\all-wcprops" />
+    <None Include="packages\packages\MySql.Data.6.9.6\lib\.svn\entries" />
+    <None Include="packages\packages\MySql.Data.6.9.6\lib\net20-cf\.svn\all-wcprops" />
+    <None Include="packages\packages\MySql.Data.6.9.6\lib\net20-cf\.svn\entries" />
+    <None Include="packages\packages\MySql.Data.6.9.6\lib\net20-cf\.svn\prop-base\MySql.Data.CF.dll.svn-base" />
+    <None Include="packages\packages\MySql.Data.6.9.6\lib\net20-cf\.svn\text-base\MySql.Data.CF.dll.svn-base" />
+    <None Include="packages\packages\MySql.Data.6.9.6\lib\net20\.svn\all-wcprops" />
+    <None Include="packages\packages\MySql.Data.6.9.6\lib\net20\.svn\entries" />
+    <None Include="packages\packages\MySql.Data.6.9.6\lib\net20\.svn\prop-base\MySql.Data.dll.svn-base" />
+    <None Include="packages\packages\MySql.Data.6.9.6\lib\net20\.svn\text-base\MySql.Data.dll.svn-base" />
+    <None Include="packages\packages\MySql.Data.6.9.6\lib\net40\.svn\all-wcprops" />
+    <None Include="packages\packages\MySql.Data.6.9.6\lib\net40\.svn\entries" />
+    <None Include="packages\packages\MySql.Data.6.9.6\lib\net40\.svn\prop-base\MySql.Data.dll.svn-base" />
+    <None Include="packages\packages\MySql.Data.6.9.6\lib\net40\.svn\text-base\MySql.Data.dll.svn-base" />
+    <None Include="packages\packages\MySql.Data.6.9.6\lib\net45\.svn\all-wcprops" />
+    <None Include="packages\packages\MySql.Data.6.9.6\lib\net45\.svn\entries" />
+    <None Include="packages\packages\MySql.Data.6.9.6\lib\net45\.svn\prop-base\MySql.Data.dll.svn-base" />
+    <None Include="packages\packages\MySql.Data.6.9.6\lib\net45\.svn\text-base\MySql.Data.dll.svn-base" />
+    <None Include="packages\packages\MySql.Data.6.9.6\MySql.Data.6.9.6.nupkg" />
+    <None Include="packages\packages\repositories.config" />
+    <None Include="packages\repositories.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Dll\CSkin.dll" />
+    <Content Include="Dll\CSkin.XML" />
+    <Content Include="Dll\ICSharpCode.SharpZipLib.dll" />
+    <Content Include="Dll\LogLib\log4net.dll" />
+    <Content Include="Dll\SharpCompress.dll" />
+    <Content Include="Dll\System.Data.SQLite.dll" />
+    <Content Include="packages\HP-Socket.5.0.2\lib\net40\HPSocketCS.dll" />
+    <Content Include="packages\HP-Socket.x64.5.0.2\content\HPSockertx64\HPSocket4C-SSL_U.dll" />
+    <Content Include="packages\HP-Socket.x64.5.0.2\content\HPSockertx64\HPSocket4C_U.dll" />
+    <Content Include="packages\HP-Socket.x86.5.0.2\content\HPSockertx86\HPSocket4C-SSL_U.dll" />
+    <Content Include="packages\HP-Socket.x86.5.0.2\content\HPSockertx86\HPSocket4C_U.dll" />
+    <Content Include="packages\log4net.2.0.8\lib\net20-full\log4net.dll" />
+    <Content Include="packages\log4net.2.0.8\lib\net20-full\log4net.xml" />
+    <Content Include="packages\log4net.2.0.8\lib\net35-client\log4net.dll" />
+    <Content Include="packages\log4net.2.0.8\lib\net35-client\log4net.xml" />
+    <Content Include="packages\log4net.2.0.8\lib\net35-full\log4net.dll" />
+    <Content Include="packages\log4net.2.0.8\lib\net35-full\log4net.xml" />
+    <Content Include="packages\log4net.2.0.8\lib\net40-client\log4net.dll" />
+    <Content Include="packages\log4net.2.0.8\lib\net40-client\log4net.xml" />
+    <Content Include="packages\log4net.2.0.8\lib\net40-full\log4net.dll" />
+    <Content Include="packages\log4net.2.0.8\lib\net40-full\log4net.xml" />
+    <Content Include="packages\log4net.2.0.8\lib\net45-full\log4net.dll" />
+    <Content Include="packages\log4net.2.0.8\lib\net45-full\log4net.xml" />
+    <Content Include="packages\log4net.2.0.8\lib\netstandard1.3\log4net.dll" />
+    <Content Include="packages\MySql.Data.6.9.6\lib\net20-cf\MySql.Data.CF.dll" />
+    <Content Include="packages\MySql.Data.6.9.6\lib\net20\MySql.Data.dll" />
+    <Content Include="packages\MySql.Data.6.9.6\lib\net40\MySql.Data.dll" />
+    <Content Include="packages\MySql.Data.6.9.6\lib\net45\MySql.Data.dll" />
+    <Content Include="packages\MySql.Data.6.9.6\Readme.txt" />
+    <Content Include="packages\Newtonsoft.Json.dll" />
+    <Content Include="packages\packages\MySql.Data.6.9.6\lib\net20-cf\MySql.Data.CF.dll" />
+    <Content Include="packages\packages\MySql.Data.6.9.6\lib\net20\MySql.Data.dll" />
+    <Content Include="packages\packages\MySql.Data.6.9.6\lib\net40\MySql.Data.dll" />
+    <Content Include="packages\packages\MySql.Data.6.9.6\lib\net45\MySql.Data.dll" />
+    <Content Include="packages\packages\MySql.Data.6.9.6\Readme.txt" />
+    <Content Include="packages\packages\Newtonsoft.Json.dll" />
+    <None Include="Resources\11.jpg" />
+    <Content Include="Resources\Closed_48px_1077409_easyicon.net.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
