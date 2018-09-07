@@ -92,32 +92,37 @@
             this.mnuServerSet = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuStartServer = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuRecordSearch = new System.Windows.Forms.ToolStripMenuItem();
+            this.测试按钮ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.btn_back = new CCWin.SkinControl.SkinButton();
-            this.btn_Search = new CCWin.SkinControl.SkinButton();
-            this.cmb_SearchType = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.panel_TextContent = new System.Windows.Forms.Panel();
-            this.txt_TextContent = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.panel_AreaCode = new System.Windows.Forms.Panel();
-            this.txt_AreaCode = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.panel_Severity = new System.Windows.Forms.Panel();
-            this.cmb_Severity = new System.Windows.Forms.ComboBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.panel_EventType = new System.Windows.Forms.Panel();
-            this.txt_EventType = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
             this.panel_SearchTime = new System.Windows.Forms.Panel();
+            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.label4 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
+            this.panel_MessageStatus = new System.Windows.Forms.Panel();
+            this.cmb_MessageStatus = new System.Windows.Forms.ComboBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.panel_TextContent = new System.Windows.Forms.Panel();
+            this.txt_TextContent = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
             this.panel_MessageType = new System.Windows.Forms.Panel();
             this.cmb_MediumType = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.btn_back = new CCWin.SkinControl.SkinButton();
+            this.panel_EventType = new System.Windows.Forms.Panel();
+            this.txt_EventType = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.panel_Severity = new System.Windows.Forms.Panel();
+            this.cmb_Severity = new System.Windows.Forms.ComboBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.panel_AreaCode = new System.Windows.Forms.Panel();
+            this.txt_AreaCode = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.btn_Search = new CCWin.SkinControl.SkinButton();
+            this.cmb_SearchType = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.skinDataGridView_Record = new CCWin.SkinControl.SkinDataGridView();
             this.dataGridViewButtonColumn1 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -129,10 +134,7 @@
             this.dataGridViewTextBoxColumn19 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn20 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewLinkColumn2 = new System.Windows.Forms.DataGridViewLinkColumn();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.panel_MessageStatus = new System.Windows.Forms.Panel();
-            this.cmb_MessageStatus = new System.Windows.Forms.ComboBox();
-            this.label9 = new System.Windows.Forms.Label();
+            this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.skinDataGridView_Main)).BeginInit();
             this.skinMenuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -141,14 +143,14 @@
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.panel_TextContent.SuspendLayout();
-            this.panel_AreaCode.SuspendLayout();
-            this.panel_Severity.SuspendLayout();
-            this.panel_EventType.SuspendLayout();
             this.panel_SearchTime.SuspendLayout();
-            this.panel_MessageType.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.skinDataGridView_Record)).BeginInit();
             this.panel_MessageStatus.SuspendLayout();
+            this.panel_TextContent.SuspendLayout();
+            this.panel_MessageType.SuspendLayout();
+            this.panel_EventType.SuspendLayout();
+            this.panel_Severity.SuspendLayout();
+            this.panel_AreaCode.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.skinDataGridView_Record)).BeginInit();
             this.SuspendLayout();
             // 
             // skinDataGridView_Main
@@ -198,7 +200,7 @@
             this.skinDataGridView_Main.Dock = System.Windows.Forms.DockStyle.Fill;
             this.skinDataGridView_Main.EnableHeadersVisualStyles = false;
             this.skinDataGridView_Main.Font = new System.Drawing.Font("微软雅黑", 10F);
-            this.skinDataGridView_Main.GridColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.skinDataGridView_Main.GridColor = System.Drawing.Color.White;
             this.skinDataGridView_Main.HeadFont = new System.Drawing.Font("微软雅黑", 10F);
             this.skinDataGridView_Main.HeadForeColor = System.Drawing.Color.White;
             this.skinDataGridView_Main.HeadSelectBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(36)))), ((int)(((byte)(36)))));
@@ -220,6 +222,7 @@
             this.skinDataGridView_Main.RowsDefaultCellStyle = dataGridViewCellStyle13;
             this.skinDataGridView_Main.RowTemplate.Height = 23;
             this.skinDataGridView_Main.Size = new System.Drawing.Size(1294, 735);
+            this.skinDataGridView_Main.SkinGridColor = System.Drawing.Color.White;
             this.skinDataGridView_Main.TabIndex = 99;
             this.skinDataGridView_Main.TitleBack = null;
             this.skinDataGridView_Main.TitleBackColorBegin = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(36)))), ((int)(((byte)(36)))));
@@ -460,7 +463,8 @@
             this.skinMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.系统设置ToolStripMenuItem,
             this.mnuServerSet,
-            this.mnuRecordSearch});
+            this.mnuRecordSearch,
+            this.测试按钮ToolStripMenuItem});
             this.skinMenuStrip1.Location = new System.Drawing.Point(4, 28);
             this.skinMenuStrip1.Name = "skinMenuStrip1";
             this.skinMenuStrip1.Padding = new System.Windows.Forms.Padding(8, 3, 0, 3);
@@ -524,7 +528,7 @@
             // mnuStartServer
             // 
             this.mnuStartServer.Name = "mnuStartServer";
-            this.mnuStartServer.Size = new System.Drawing.Size(180, 22);
+            this.mnuStartServer.Size = new System.Drawing.Size(130, 22);
             this.mnuStartServer.Text = "启动伺服";
             this.mnuStartServer.Click += new System.EventHandler(this.mnuStartServer_Click);
             // 
@@ -534,6 +538,13 @@
             this.mnuRecordSearch.Size = new System.Drawing.Size(75, 18);
             this.mnuRecordSearch.Text = "记录搜索";
             this.mnuRecordSearch.Click += new System.EventHandler(this.mnuRecordSearch_Click);
+            // 
+            // 测试按钮ToolStripMenuItem
+            // 
+            this.测试按钮ToolStripMenuItem.Name = "测试按钮ToolStripMenuItem";
+            this.测试按钮ToolStripMenuItem.Size = new System.Drawing.Size(75, 18);
+            this.测试按钮ToolStripMenuItem.Text = "测试按钮";
+            this.测试按钮ToolStripMenuItem.Click += new System.EventHandler(this.测试按钮ToolStripMenuItem_Click);
             // 
             // panel1
             // 
@@ -561,7 +572,7 @@
             // 
             this.splitContainer1.Panel2.Controls.Add(this.skinDataGridView_Record);
             this.splitContainer1.Size = new System.Drawing.Size(1294, 735);
-            this.splitContainer1.SplitterDistance = 110;
+            this.splitContainer1.SplitterDistance = 109;
             this.splitContainer1.TabIndex = 0;
             // 
             // panel2
@@ -580,8 +591,148 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1292, 108);
+            this.panel2.Size = new System.Drawing.Size(1292, 107);
             this.panel2.TabIndex = 0;
+            // 
+            // panel_SearchTime
+            // 
+            this.panel_SearchTime.Controls.Add(this.dateTimePicker2);
+            this.panel_SearchTime.Controls.Add(this.label4);
+            this.panel_SearchTime.Controls.Add(this.dateTimePicker1);
+            this.panel_SearchTime.Controls.Add(this.label3);
+            this.panel_SearchTime.Location = new System.Drawing.Point(413, 12);
+            this.panel_SearchTime.Name = "panel_SearchTime";
+            this.panel_SearchTime.Size = new System.Drawing.Size(545, 84);
+            this.panel_SearchTime.TabIndex = 101;
+            this.panel_SearchTime.Visible = false;
+            // 
+            // dateTimePicker2
+            // 
+            this.dateTimePicker2.CustomFormat = "yyyy-MM-dd HH:mm:ss";
+            this.dateTimePicker2.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePicker2.Location = new System.Drawing.Point(344, 28);
+            this.dateTimePicker2.Name = "dateTimePicker2";
+            this.dateTimePicker2.Size = new System.Drawing.Size(195, 29);
+            this.dateTimePicker2.TabIndex = 7;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(312, 32);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(26, 21);
+            this.label4.TabIndex = 6;
+            this.label4.Text = "至";
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.CustomFormat = "yyyy-MM-dd HH:mm:ss";
+            this.dateTimePicker1.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePicker1.Location = new System.Drawing.Point(114, 28);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(195, 29);
+            this.dateTimePicker1.TabIndex = 3;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(4, 32);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(106, 21);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "开始时间范围";
+            // 
+            // panel_MessageStatus
+            // 
+            this.panel_MessageStatus.Controls.Add(this.cmb_MessageStatus);
+            this.panel_MessageStatus.Controls.Add(this.label9);
+            this.panel_MessageStatus.Location = new System.Drawing.Point(529, 12);
+            this.panel_MessageStatus.Name = "panel_MessageStatus";
+            this.panel_MessageStatus.Size = new System.Drawing.Size(343, 84);
+            this.panel_MessageStatus.TabIndex = 103;
+            this.panel_MessageStatus.Visible = false;
+            // 
+            // cmb_MessageStatus
+            // 
+            this.cmb_MessageStatus.FormattingEnabled = true;
+            this.cmb_MessageStatus.Location = new System.Drawing.Point(132, 30);
+            this.cmb_MessageStatus.Name = "cmb_MessageStatus";
+            this.cmb_MessageStatus.Size = new System.Drawing.Size(186, 24);
+            this.cmb_MessageStatus.TabIndex = 3;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label9.ForeColor = System.Drawing.Color.White;
+            this.label9.Location = new System.Drawing.Point(19, 32);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(74, 21);
+            this.label9.TabIndex = 2;
+            this.label9.Text = "消息状态";
+            // 
+            // panel_TextContent
+            // 
+            this.panel_TextContent.Controls.Add(this.txt_TextContent);
+            this.panel_TextContent.Controls.Add(this.label8);
+            this.panel_TextContent.Location = new System.Drawing.Point(529, 11);
+            this.panel_TextContent.Name = "panel_TextContent";
+            this.panel_TextContent.Size = new System.Drawing.Size(343, 84);
+            this.panel_TextContent.TabIndex = 105;
+            this.panel_TextContent.Visible = false;
+            // 
+            // txt_TextContent
+            // 
+            this.txt_TextContent.Location = new System.Drawing.Point(146, 29);
+            this.txt_TextContent.Name = "txt_TextContent";
+            this.txt_TextContent.Size = new System.Drawing.Size(183, 26);
+            this.txt_TextContent.TabIndex = 3;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label8.ForeColor = System.Drawing.Color.White;
+            this.label8.Location = new System.Drawing.Point(19, 32);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(90, 21);
+            this.label8.TabIndex = 2;
+            this.label8.Text = "文本关键字";
+            // 
+            // panel_MessageType
+            // 
+            this.panel_MessageType.Controls.Add(this.cmb_MediumType);
+            this.panel_MessageType.Controls.Add(this.label2);
+            this.panel_MessageType.Location = new System.Drawing.Point(527, 11);
+            this.panel_MessageType.Name = "panel_MessageType";
+            this.panel_MessageType.Size = new System.Drawing.Size(343, 84);
+            this.panel_MessageType.TabIndex = 4;
+            this.panel_MessageType.Visible = false;
+            // 
+            // cmb_MediumType
+            // 
+            this.cmb_MediumType.FormattingEnabled = true;
+            this.cmb_MediumType.Location = new System.Drawing.Point(132, 30);
+            this.cmb_MediumType.Name = "cmb_MediumType";
+            this.cmb_MediumType.Size = new System.Drawing.Size(186, 24);
+            this.cmb_MediumType.TabIndex = 3;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(19, 32);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(106, 21);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "消息媒体类型";
             // 
             // btn_back
             // 
@@ -600,6 +751,91 @@
             this.btn_back.Text = "返回";
             this.btn_back.UseVisualStyleBackColor = false;
             this.btn_back.Click += new System.EventHandler(this.btn_back_Click);
+            // 
+            // panel_EventType
+            // 
+            this.panel_EventType.Controls.Add(this.txt_EventType);
+            this.panel_EventType.Controls.Add(this.label5);
+            this.panel_EventType.Location = new System.Drawing.Point(528, 11);
+            this.panel_EventType.Name = "panel_EventType";
+            this.panel_EventType.Size = new System.Drawing.Size(343, 84);
+            this.panel_EventType.TabIndex = 102;
+            this.panel_EventType.Visible = false;
+            // 
+            // txt_EventType
+            // 
+            this.txt_EventType.Location = new System.Drawing.Point(146, 29);
+            this.txt_EventType.Name = "txt_EventType";
+            this.txt_EventType.Size = new System.Drawing.Size(137, 26);
+            this.txt_EventType.TabIndex = 3;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(19, 32);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(90, 21);
+            this.label5.TabIndex = 2;
+            this.label5.Text = "事件类型码";
+            // 
+            // panel_Severity
+            // 
+            this.panel_Severity.Controls.Add(this.cmb_Severity);
+            this.panel_Severity.Controls.Add(this.label6);
+            this.panel_Severity.Location = new System.Drawing.Point(530, 11);
+            this.panel_Severity.Name = "panel_Severity";
+            this.panel_Severity.Size = new System.Drawing.Size(343, 84);
+            this.panel_Severity.TabIndex = 103;
+            this.panel_Severity.Visible = false;
+            // 
+            // cmb_Severity
+            // 
+            this.cmb_Severity.FormattingEnabled = true;
+            this.cmb_Severity.Location = new System.Drawing.Point(115, 32);
+            this.cmb_Severity.Name = "cmb_Severity";
+            this.cmb_Severity.Size = new System.Drawing.Size(186, 24);
+            this.cmb_Severity.TabIndex = 4;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label6.ForeColor = System.Drawing.Color.White;
+            this.label6.Location = new System.Drawing.Point(19, 32);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(74, 21);
+            this.label6.TabIndex = 2;
+            this.label6.Text = "事件级别";
+            // 
+            // panel_AreaCode
+            // 
+            this.panel_AreaCode.Controls.Add(this.txt_AreaCode);
+            this.panel_AreaCode.Controls.Add(this.label7);
+            this.panel_AreaCode.Location = new System.Drawing.Point(530, 11);
+            this.panel_AreaCode.Name = "panel_AreaCode";
+            this.panel_AreaCode.Size = new System.Drawing.Size(343, 84);
+            this.panel_AreaCode.TabIndex = 104;
+            this.panel_AreaCode.Visible = false;
+            // 
+            // txt_AreaCode
+            // 
+            this.txt_AreaCode.Location = new System.Drawing.Point(146, 29);
+            this.txt_AreaCode.Name = "txt_AreaCode";
+            this.txt_AreaCode.Size = new System.Drawing.Size(137, 26);
+            this.txt_AreaCode.TabIndex = 3;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label7.ForeColor = System.Drawing.Color.White;
+            this.label7.Location = new System.Drawing.Point(19, 32);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(58, 21);
+            this.label7.TabIndex = 2;
+            this.label7.Text = "区域码";
             // 
             // btn_Search
             // 
@@ -638,192 +874,6 @@
             this.label1.Size = new System.Drawing.Size(74, 21);
             this.label1.TabIndex = 0;
             this.label1.Text = "搜索方式";
-            // 
-            // panel_TextContent
-            // 
-            this.panel_TextContent.Controls.Add(this.txt_TextContent);
-            this.panel_TextContent.Controls.Add(this.label8);
-            this.panel_TextContent.Location = new System.Drawing.Point(529, 11);
-            this.panel_TextContent.Name = "panel_TextContent";
-            this.panel_TextContent.Size = new System.Drawing.Size(343, 84);
-            this.panel_TextContent.TabIndex = 105;
-            this.panel_TextContent.Visible = false;
-            // 
-            // txt_TextContent
-            // 
-            this.txt_TextContent.Location = new System.Drawing.Point(146, 29);
-            this.txt_TextContent.Name = "txt_TextContent";
-            this.txt_TextContent.Size = new System.Drawing.Size(183, 26);
-            this.txt_TextContent.TabIndex = 3;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(19, 32);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(90, 21);
-            this.label8.TabIndex = 2;
-            this.label8.Text = "文本关键字";
-            // 
-            // panel_AreaCode
-            // 
-            this.panel_AreaCode.Controls.Add(this.txt_AreaCode);
-            this.panel_AreaCode.Controls.Add(this.label7);
-            this.panel_AreaCode.Location = new System.Drawing.Point(530, 11);
-            this.panel_AreaCode.Name = "panel_AreaCode";
-            this.panel_AreaCode.Size = new System.Drawing.Size(343, 84);
-            this.panel_AreaCode.TabIndex = 104;
-            this.panel_AreaCode.Visible = false;
-            // 
-            // txt_AreaCode
-            // 
-            this.txt_AreaCode.Location = new System.Drawing.Point(146, 29);
-            this.txt_AreaCode.Name = "txt_AreaCode";
-            this.txt_AreaCode.Size = new System.Drawing.Size(137, 26);
-            this.txt_AreaCode.TabIndex = 3;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(19, 32);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(58, 21);
-            this.label7.TabIndex = 2;
-            this.label7.Text = "区域码";
-            // 
-            // panel_Severity
-            // 
-            this.panel_Severity.Controls.Add(this.cmb_Severity);
-            this.panel_Severity.Controls.Add(this.label6);
-            this.panel_Severity.Location = new System.Drawing.Point(530, 11);
-            this.panel_Severity.Name = "panel_Severity";
-            this.panel_Severity.Size = new System.Drawing.Size(343, 84);
-            this.panel_Severity.TabIndex = 103;
-            this.panel_Severity.Visible = false;
-            // 
-            // cmb_Severity
-            // 
-            this.cmb_Severity.FormattingEnabled = true;
-            this.cmb_Severity.Location = new System.Drawing.Point(115, 32);
-            this.cmb_Severity.Name = "cmb_Severity";
-            this.cmb_Severity.Size = new System.Drawing.Size(186, 24);
-            this.cmb_Severity.TabIndex = 4;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(19, 32);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(74, 21);
-            this.label6.TabIndex = 2;
-            this.label6.Text = "事件级别";
-            // 
-            // panel_EventType
-            // 
-            this.panel_EventType.Controls.Add(this.txt_EventType);
-            this.panel_EventType.Controls.Add(this.label5);
-            this.panel_EventType.Location = new System.Drawing.Point(528, 11);
-            this.panel_EventType.Name = "panel_EventType";
-            this.panel_EventType.Size = new System.Drawing.Size(343, 84);
-            this.panel_EventType.TabIndex = 102;
-            this.panel_EventType.Visible = false;
-            // 
-            // txt_EventType
-            // 
-            this.txt_EventType.Location = new System.Drawing.Point(146, 29);
-            this.txt_EventType.Name = "txt_EventType";
-            this.txt_EventType.Size = new System.Drawing.Size(137, 26);
-            this.txt_EventType.TabIndex = 3;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(19, 32);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(90, 21);
-            this.label5.TabIndex = 2;
-            this.label5.Text = "事件类型码";
-            // 
-            // panel_SearchTime
-            // 
-            this.panel_SearchTime.Controls.Add(this.dateTimePicker2);
-            this.panel_SearchTime.Controls.Add(this.label4);
-            this.panel_SearchTime.Controls.Add(this.dateTimePicker1);
-            this.panel_SearchTime.Controls.Add(this.label3);
-            this.panel_SearchTime.Location = new System.Drawing.Point(413, 12);
-            this.panel_SearchTime.Name = "panel_SearchTime";
-            this.panel_SearchTime.Size = new System.Drawing.Size(545, 84);
-            this.panel_SearchTime.TabIndex = 101;
-            this.panel_SearchTime.Visible = false;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(312, 32);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(26, 21);
-            this.label4.TabIndex = 6;
-            this.label4.Text = "至";
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.CustomFormat = "yyyy-MM-dd HH:mm:ss";
-            this.dateTimePicker1.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker1.Location = new System.Drawing.Point(114, 28);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(195, 29);
-            this.dateTimePicker1.TabIndex = 3;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(4, 32);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(106, 21);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "开始时间范围";
-            // 
-            // panel_MessageType
-            // 
-            this.panel_MessageType.Controls.Add(this.cmb_MediumType);
-            this.panel_MessageType.Controls.Add(this.label2);
-            this.panel_MessageType.Location = new System.Drawing.Point(527, 11);
-            this.panel_MessageType.Name = "panel_MessageType";
-            this.panel_MessageType.Size = new System.Drawing.Size(343, 84);
-            this.panel_MessageType.TabIndex = 4;
-            this.panel_MessageType.Visible = false;
-            // 
-            // cmb_MediumType
-            // 
-            this.cmb_MediumType.FormattingEnabled = true;
-            this.cmb_MediumType.Location = new System.Drawing.Point(132, 30);
-            this.cmb_MediumType.Name = "cmb_MediumType";
-            this.cmb_MediumType.Size = new System.Drawing.Size(186, 24);
-            this.cmb_MediumType.TabIndex = 3;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(19, 32);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(106, 21);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "消息媒体类型";
             // 
             // skinDataGridView_Record
             // 
@@ -893,7 +943,7 @@
             dataGridViewCellStyle26.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             this.skinDataGridView_Record.RowsDefaultCellStyle = dataGridViewCellStyle26;
             this.skinDataGridView_Record.RowTemplate.Height = 23;
-            this.skinDataGridView_Record.Size = new System.Drawing.Size(1292, 619);
+            this.skinDataGridView_Record.Size = new System.Drawing.Size(1292, 620);
             this.skinDataGridView_Record.TabIndex = 100;
             this.skinDataGridView_Record.TitleBack = null;
             this.skinDataGridView_Record.TitleBackColorBegin = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(36)))), ((int)(((byte)(36)))));
@@ -985,44 +1035,14 @@
             this.dataGridViewLinkColumn2.ReadOnly = true;
             this.dataGridViewLinkColumn2.Width = 500;
             // 
-            // dateTimePicker2
+            // notifyIcon1
             // 
-            this.dateTimePicker2.CustomFormat = "yyyy-MM-dd HH:mm:ss";
-            this.dateTimePicker2.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker2.Location = new System.Drawing.Point(344, 28);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(195, 29);
-            this.dateTimePicker2.TabIndex = 7;
-            // 
-            // panel_MessageStatus
-            // 
-            this.panel_MessageStatus.Controls.Add(this.cmb_MessageStatus);
-            this.panel_MessageStatus.Controls.Add(this.label9);
-            this.panel_MessageStatus.Location = new System.Drawing.Point(529, 12);
-            this.panel_MessageStatus.Name = "panel_MessageStatus";
-            this.panel_MessageStatus.Size = new System.Drawing.Size(343, 84);
-            this.panel_MessageStatus.TabIndex = 103;
-            this.panel_MessageStatus.Visible = false;
-            // 
-            // cmb_MessageStatus
-            // 
-            this.cmb_MessageStatus.FormattingEnabled = true;
-            this.cmb_MessageStatus.Location = new System.Drawing.Point(132, 30);
-            this.cmb_MessageStatus.Name = "cmb_MessageStatus";
-            this.cmb_MessageStatus.Size = new System.Drawing.Size(186, 24);
-            this.cmb_MessageStatus.TabIndex = 3;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(19, 32);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(74, 21);
-            this.label9.TabIndex = 2;
-            this.label9.Text = "消息状态";
+            this.notifyIcon1.BalloonTipText = "应急广播前置系统";
+            this.notifyIcon1.BalloonTipTitle = "应急广播前置系统";
+            this.notifyIcon1.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyIcon1.Icon")));
+            this.notifyIcon1.Text = "应急广播前置系统";
+            this.notifyIcon1.Visible = true;
+            this.notifyIcon1.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.notifyIcon1_MouseDoubleClick);
             // 
             // mainForm
             // 
@@ -1036,6 +1056,7 @@
             this.Controls.Add(this.skinMenuStrip1);
             this.EffectCaption = CCWin.TitleType.Title;
             this.Font = new System.Drawing.Font("宋体", 12F);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.skinMenuStrip1;
             this.Margin = new System.Windows.Forms.Padding(4);
@@ -1045,6 +1066,8 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "应急广播前置系统";
             this.TitleColor = System.Drawing.Color.White;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.mainForm_FormClosing);
+            this.SizeChanged += new System.EventHandler(this.mainForm_SizeChanged);
             ((System.ComponentModel.ISupportInitialize)(this.skinDataGridView_Main)).EndInit();
             this.skinMenuStrip1.ResumeLayout(false);
             this.skinMenuStrip1.PerformLayout();
@@ -1055,21 +1078,21 @@
             this.splitContainer1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            this.panel_TextContent.ResumeLayout(false);
-            this.panel_TextContent.PerformLayout();
-            this.panel_AreaCode.ResumeLayout(false);
-            this.panel_AreaCode.PerformLayout();
-            this.panel_Severity.ResumeLayout(false);
-            this.panel_Severity.PerformLayout();
-            this.panel_EventType.ResumeLayout(false);
-            this.panel_EventType.PerformLayout();
             this.panel_SearchTime.ResumeLayout(false);
             this.panel_SearchTime.PerformLayout();
-            this.panel_MessageType.ResumeLayout(false);
-            this.panel_MessageType.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.skinDataGridView_Record)).EndInit();
             this.panel_MessageStatus.ResumeLayout(false);
             this.panel_MessageStatus.PerformLayout();
+            this.panel_TextContent.ResumeLayout(false);
+            this.panel_TextContent.PerformLayout();
+            this.panel_MessageType.ResumeLayout(false);
+            this.panel_MessageType.PerformLayout();
+            this.panel_EventType.ResumeLayout(false);
+            this.panel_EventType.PerformLayout();
+            this.panel_Severity.ResumeLayout(false);
+            this.panel_Severity.PerformLayout();
+            this.panel_AreaCode.ResumeLayout(false);
+            this.panel_AreaCode.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.skinDataGridView_Record)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1154,5 +1177,7 @@
         private System.Windows.Forms.Panel panel_MessageStatus;
         private System.Windows.Forms.ComboBox cmb_MessageStatus;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.NotifyIcon notifyIcon1;
+        private System.Windows.Forms.ToolStripMenuItem 测试按钮ToolStripMenuItem;
     }
 }

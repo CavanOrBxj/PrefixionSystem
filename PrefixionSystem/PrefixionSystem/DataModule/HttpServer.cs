@@ -557,6 +557,10 @@ namespace PrefixionSystem
                                     tmp.Severity = ebdb.EBM.MsgBasicInfo.Severity;
                                     tmp.TextContent = ebdb.EBM.MsgContent.MsgDesc;
                                     tmp.DealFlag = 0;
+                                    tmp.SenderName = ebdb.EBM.MsgBasicInfo.SenderName;
+                                    tmp.SenderCode = ebdb.EBM.MsgBasicInfo.SenderCode;
+                                    tmp.SendTime = ebdb.EBM.MsgBasicInfo.SentTime;
+                                    tmp.MsgTitle = ebdb.EBM.MsgContent.MsgTitle;
 
                                     SingletonInfo.GetInstance().RecordDetailList.Add(tmp);
                                     if (!Directory.Exists(pp))
@@ -595,6 +599,10 @@ namespace PrefixionSystem
                                     tmp.Severity = ebdb.EBM.MsgBasicInfo.Severity;
                                     tmp.TextContent = ebdb.EBM.MsgContent.MsgDesc;
                                     tmp.DealFlag = 0;
+                                    tmp.SenderName = ebdb.EBM.MsgBasicInfo.SenderName;
+                                    tmp.SenderCode = ebdb.EBM.MsgBasicInfo.SenderCode;
+                                    tmp.SendTime = ebdb.EBM.MsgBasicInfo.SentTime;
+                                    tmp.MsgTitle = ebdb.EBM.MsgContent.MsgTitle;
                                     SingletonInfo.GetInstance().RecordDetailList.Add(tmp);
                                     if (!Directory.Exists(pp))
                                     {

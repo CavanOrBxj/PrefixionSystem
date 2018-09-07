@@ -43,5 +43,27 @@ namespace PrefixionSystem.DataModule
         /// </summary>
         public int DealFlag { get; set; }
 
+        /// <summary>
+        /// 发送消息部门
+        /// </summary>
+       public string SenderName { get; set; }
+
+        /// <summary>
+        /// 发送部门资源码
+        /// </summary>
+        public string SenderCode { get; set; }
+
+        /// <summary>
+        /// 消息发送时间
+        /// </summary>
+        public string SendTime { get; set; }
+
+        /// <summary>
+        /// 消息标题
+        /// </summary>
+        public string MsgTitle { get; set; }
+
+
+
     }
 }

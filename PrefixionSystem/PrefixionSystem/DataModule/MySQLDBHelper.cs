@@ -437,10 +437,10 @@ namespace PrefixionSystem
                 detail.SavePath = detail.SavePath.Replace(@"\", @"\\");
 
                     sqlUpdate = string.Format("insert into RecordList " +
-                        "(SourceTar,SourceTarPath,MediumType,MsgStartTime,MsgEndTime,AreaCode,SavePath,Severity,EventType,TextContent,DealFlag) " +
-                        "values('{0}', '{1}', '{2}', '{3}', '{4}', '{5}', '{6}', '{7}', '{8}','{9}',{10})",
+                        "(SourceTar,SourceTarPath,MediumType,MsgStartTime,MsgEndTime,AreaCode,SavePath,Severity,EventType,TextContent,DealFlag,SenderName,SenderCode,SendTime,MsgTitle) " +
+                        "values('{0}', '{1}', '{2}', '{3}', '{4}', '{5}', '{6}', '{7}', '{8}','{9}',{10},'{11}','{12}','{13}','{14}')",
                          detail.SourceTar,detail.SourceTarPath, detail.MediumType, detail.MsgStartTime,
-                        detail.MsgEndTime, detail.AreaCode, detail.SavePath,detail.Severity,detail.EventType,detail.TextContent,detail.DealFlag);
+                        detail.MsgEndTime, detail.AreaCode, detail.SavePath,detail.Severity,detail.EventType,detail.TextContent,detail.DealFlag,detail.SenderName,detail.SenderCode,detail.SendTime,detail.MsgTitle);
                 
                 cmd.CommandText = sqlUpdate;
                 if (cmd.ExecuteNonQuery() > 0)

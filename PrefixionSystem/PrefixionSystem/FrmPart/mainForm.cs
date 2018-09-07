@@ -17,8 +17,6 @@ namespace PrefixionSystem.FrmPart
 {
     public partial class mainForm : CCSkinMain
     {
-
-       
         private ServerIPSetForm setipFrm;
         private TmpFolderSetForm tmpforldFrm;
         private AdapterSetForm adapterFrm;
@@ -82,6 +80,8 @@ namespace PrefixionSystem.FrmPart
         private readonly string ClassName;
 
         MessageShowForm MessageShowDlg;
+        TaskbarNotifier taskbarNotifier3;
+
 
         public mainForm()
         {
@@ -99,7 +99,58 @@ namespace PrefixionSystem.FrmPart
             GetSQLData();
             InitCombox();
 
+            InitTaskbarNotifier();
 
+
+        }
+
+        private void InitTaskbarNotifier()
+        {
+            taskbarNotifier3 = new TaskbarNotifier();
+            taskbarNotifier3.CloseClickable = true;
+            taskbarNotifier3.TitleClickable = false;
+            taskbarNotifier3.ContentClickable = true;
+            taskbarNotifier3.EnableSelectionRectangle = true;
+            taskbarNotifier3.KeepVisibleOnMousOver = true;
+            taskbarNotifier3.ReShowOnMouseOver = true;
+
+            taskbarNotifier3.SetBackgroundBitmap(Resource1.skin3, Color.FromArgb(255, 0, 255));
+            taskbarNotifier3.SetCloseBitmap(Resource1.close3, Color.FromArgb(255, 0, 255), new Point(262, 2));
+            taskbarNotifier3.TitleRectangle = new Rectangle(90, 30, 176, 20);
+            taskbarNotifier3.ContentRectangle = new Rectangle(68, 75, 197, 30);
+            taskbarNotifier3.MediumTypeRectangle = new Rectangle(68, 105, 197, 30);
+            taskbarNotifier3.UnhandledMsgRectangle = new Rectangle(68, 135, 197, 30);
+            taskbarNotifier3.ContentClick += new TaskbarNotifier.MyEvent(ContentClick);
+        }
+        
+
+
+        void ContentClick(RecordDetail ea)
+        {
+            if (this.WindowState == FormWindowState.Minimized)
+            {
+                WindowState = FormWindowState.Normal;
+                //激活窗体并给予它焦点
+                this.Activate();
+                //任务栏区显示图标
+                this.ShowInTaskbar = true;
+
+                skinDataGridView_Record.Rows.Clear();
+                panel1.Visible = false;
+                skinDataGridView_Main.Visible = true;
+            }
+
+
+            foreach (DataGridViewRow item in skinDataGridView_Main.Rows)
+            {
+                RecordDetail pp = (RecordDetail)item.Tag;
+                if (pp.RecordId== ea.RecordId)
+                {
+                    //  item.Selected = true;
+
+                    item. DefaultCellStyle.BackColor = Color.Green;
+                }
+            }
         }
 
         private void InitCombox()
@@ -134,6 +185,10 @@ namespace PrefixionSystem.FrmPart
                     pp.SourceTar= item["SourceTar"].ToString();
                     pp.SourceTarPath= item["SourceTarPath"].ToString();
                     pp.TextContent = item["TextContent"].ToString();
+                    pp.MsgTitle= item["MsgTitle"].ToString();
+                    pp.SenderCode= item["SenderCode"].ToString();
+                    pp.SenderName= item["SenderName"].ToString();
+                    pp.SendTime= item["SendTime"].ToString();
 
                     SetDataGridviewControlPropertyValue(this.skinDataGridView_Main, pp);
                     SingletonInfo.GetInstance().RecordDetailList.Add(pp);
@@ -147,6 +202,15 @@ namespace PrefixionSystem.FrmPart
             RecordDetail dd = (RecordDetail)obj;
             SetDataGridviewControlPropertyValue(this.skinDataGridView_Main,dd);
 
+            int UnhandledMsgCount = 0;
+
+            UnhandledMsgCount=SingletonInfo.GetInstance().RecordDetailList.FindAll(s => s.DealFlag==0).Count;
+
+
+            this.Invoke(new Action(() =>
+            {
+                taskbarNotifier3.Show(dd, UnhandledMsgCount);
+            }));
         }
 
         private void InitData()
@@ -477,8 +541,6 @@ namespace PrefixionSystem.FrmPart
                 skinDataGridView_Main.Rows.Add(dgvR);
             }
         }
-
-
         private void SetDataGridviewControlPropertyValueNew(DataGridView oControl, RecordDetail task)
         {
 
@@ -558,6 +620,7 @@ namespace PrefixionSystem.FrmPart
                         if (MessageShowDlg.IsSure)
                         {
                             DataGridViewRow dgvR = skinDataGridView_Main.Rows[e.RowIndex];
+                            dgvR.DefaultCellStyle.BackColor = Color.FromArgb(40,36,36);
                             RecordDetail selectone = (RecordDetail)dgvR.Tag;
                             selectone.DealFlag = 1;
                             //更新数据库
@@ -885,6 +948,64 @@ namespace PrefixionSystem.FrmPart
 
                 throw;
             }
+        }
+
+      
+
+        private void notifyIcon1_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            if (WindowState == FormWindowState.Minimized)
+            {
+                //还原窗体显示    
+                WindowState = FormWindowState.Normal;
+                //激活窗体并给予它焦点
+                this.Activate();
+                //任务栏区显示图标
+                this.ShowInTaskbar = true;
+                //托盘区图标隐藏
+              //  notifyIcon1.Visible = false;
+            }
+        }
+
+        private void mainForm_SizeChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                //判断是否选择的是最小化按钮
+                if (WindowState == FormWindowState.Minimized)
+                {
+                    //隐藏任务栏区图标
+                    this.ShowInTaskbar = false;
+                    //图标显示在托盘区
+                    notifyIcon1.Visible = true;
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+        private void mainForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+
+            MessageShowDlg = new MessageShowForm { label1 = { Text = @"是否确认退出程序？" } };
+            MessageShowDlg.ShowDialog();
+            if (MessageShowDlg.IsSure)
+            {
+                this.Dispose();
+                this.Close();
+            }
+            else
+            {
+                e.Cancel = true;
+            } 
+        }
+
+        private void 测试按钮ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }
