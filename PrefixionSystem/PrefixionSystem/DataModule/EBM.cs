@@ -21,7 +21,7 @@ namespace PrefixionSystem
 
      //   public string Sender;
 
-     //   public string SentTime;
+    //   public string SentTime;
 
         public string StartTime;
 
@@ -62,7 +62,7 @@ namespace PrefixionSystem
         public string MsgType;
         public string SenderName;
         public string SenderCode;
-        public string SentTime;
+        public string SendTime;
         public string EventType;
         public string Severity;
 

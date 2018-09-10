@@ -559,7 +559,7 @@ namespace PrefixionSystem
                                     tmp.DealFlag = 0;
                                     tmp.SenderName = ebdb.EBM.MsgBasicInfo.SenderName;
                                     tmp.SenderCode = ebdb.EBM.MsgBasicInfo.SenderCode;
-                                    tmp.SendTime = ebdb.EBM.MsgBasicInfo.SentTime;
+                                    tmp.SendTime = ebdb.EBM.MsgBasicInfo.SendTime;
                                     tmp.MsgTitle = ebdb.EBM.MsgContent.MsgTitle;
 
                                     SingletonInfo.GetInstance().RecordDetailList.Add(tmp);
@@ -567,14 +567,20 @@ namespace PrefixionSystem
                                     {
                                         Directory.CreateDirectory(pp);//不存在该路径就创建
                                     }
-                                    FileStream fs = File.Create(pp + "\\" + fill+".txt");    //创建文件
-                                    fs.Close();
-                                    Thread.Sleep(500);
-                                    StreamWriter sw = new StreamWriter(pp + "\\" + fill + ".txt");
-                                    sw.Write(ebdb.EBM.MsgContent.MsgDesc);
-                                    sw.Flush();
-                                    sw.Close();
-                                    tmp.SavePath = pp + "\\" + fill + ".txt";
+
+                                    string docfilepath = pp + "\\" + fill + ".doc";
+
+
+                                    CreatWord.CreateWordFile(docfilepath, tmp.TextContent);
+
+                                    //FileStream fs = File.Create(pp + "\\" + fill+".txt");    //创建文件
+                                    //fs.Close();
+                                    //Thread.Sleep(500);
+                                    //StreamWriter sw = new StreamWriter(pp + "\\" + fill + ".txt");
+                                    //sw.Write(ebdb.EBM.MsgContent.MsgDesc);
+                                    //sw.Flush();
+                                    //sw.Close();
+                                    tmp.SavePath = pp + "\\" + fill + ".doc";
                                     int returncode=  SingletonInfo.GetInstance().DataBase.InsertRecorde(tmp);
                                     if (returncode!=-1)
                                     {
@@ -601,7 +607,7 @@ namespace PrefixionSystem
                                     tmp.DealFlag = 0;
                                     tmp.SenderName = ebdb.EBM.MsgBasicInfo.SenderName;
                                     tmp.SenderCode = ebdb.EBM.MsgBasicInfo.SenderCode;
-                                    tmp.SendTime = ebdb.EBM.MsgBasicInfo.SentTime;
+                                    tmp.SendTime = ebdb.EBM.MsgBasicInfo.SendTime;
                                     tmp.MsgTitle = ebdb.EBM.MsgContent.MsgTitle;
                                     SingletonInfo.GetInstance().RecordDetailList.Add(tmp);
                                     if (!Directory.Exists(pp))

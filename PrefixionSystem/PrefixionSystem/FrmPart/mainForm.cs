@@ -80,6 +80,7 @@ namespace PrefixionSystem.FrmPart
         private readonly string ClassName;
 
         MessageShowForm MessageShowDlg;
+        EBMDetailShowForm EBMDetailShowDlg;
         TaskbarNotifier taskbarNotifier3;
 
 
@@ -506,7 +507,7 @@ namespace PrefixionSystem.FrmPart
 
 
                 dgvR.Cells[1].Value = task.RecordId;
-                dgvR.Cells[2].Value = task.SourceTar;
+                dgvR.Cells[2].Value = "详情";
                 dgvR.Cells[3].Value = task.MediumType;
                 dgvR.Cells[4].Value = task.EventType;
 
@@ -569,7 +570,7 @@ namespace PrefixionSystem.FrmPart
 
 
                 dgvR.Cells[1].Value = task.RecordId;
-                dgvR.Cells[2].Value = task.SourceTar;
+                dgvR.Cells[2].Value = "详情";
                 dgvR.Cells[3].Value = task.MediumType;
                 dgvR.Cells[4].Value = task.EventType;
 
@@ -631,16 +632,12 @@ namespace PrefixionSystem.FrmPart
 
                             break;
                     case 2:
-                        MessageShowDlg = new MessageShowForm { label1 = { Text = @"打开链接？" } };
-                        MessageShowDlg.ShowDialog();
-                        if (MessageShowDlg.IsSure)
-                        {
-                            DataGridViewRow dgvR = skinDataGridView_Main.Rows[e.RowIndex];
-                            RecordDetail selectone = (RecordDetail)dgvR.Tag;
-                            string path = Path.GetDirectoryName(selectone.SourceTarPath);
-                            System.Diagnostics.Process.Start(path);
-                        }
-                            break;
+                        DataGridViewRow dgvRS = skinDataGridView_Main.Rows[e.RowIndex];
+                        RecordDetail selected = (RecordDetail)dgvRS.Tag;
+
+                        EBMDetailShowDlg = new EBMDetailShowForm(selected);
+                        EBMDetailShowDlg.ShowDialog();
+                        break;
                     case 9:
                         MessageShowDlg = new MessageShowForm { label1 = { Text = @"打开链接？" } };
                         MessageShowDlg.ShowDialog();
@@ -919,15 +916,11 @@ namespace PrefixionSystem.FrmPart
 
                         break;
                     case 2:
-                        MessageShowDlg = new MessageShowForm { label1 = { Text = @"打开链接？" } };
-                        MessageShowDlg.ShowDialog();
-                        if (MessageShowDlg.IsSure)
-                        {
-                            DataGridViewRow dgvR = skinDataGridView_Record.Rows[e.RowIndex];
-                            RecordDetail selectone = (RecordDetail)dgvR.Tag;
-                            string path = Path.GetDirectoryName(selectone.SourceTarPath);
-                            System.Diagnostics.Process.Start(path);
-                        }
+                        DataGridViewRow dgvRS = skinDataGridView_Record.Rows[e.RowIndex];
+                        RecordDetail selected = (RecordDetail)dgvRS.Tag;
+
+                        EBMDetailShowDlg = new EBMDetailShowForm(selected);
+                        EBMDetailShowDlg.ShowDialog();
                         break;
                     case 9:
                         MessageShowDlg = new MessageShowForm { label1 = { Text = @"打开链接？" } };
@@ -994,8 +987,14 @@ namespace PrefixionSystem.FrmPart
             MessageShowDlg.ShowDialog();
             if (MessageShowDlg.IsSure)
             {
-                this.Dispose();
-                this.Close();
+                if (httpthread != null)
+                {
+                    httpthread.Abort();
+                    httpthread = null;
+                }
+                httpServer.StopListen();
+
+                System.Environment.Exit(0);
             }
             else
             {
@@ -1003,9 +1002,41 @@ namespace PrefixionSystem.FrmPart
             } 
         }
 
-        private void 测试按钮ToolStripMenuItem_Click(object sender, EventArgs e)
+        private void notifyIcon1_MouseClick(object sender, MouseEventArgs e)
         {
-            
+            if (e.Button == MouseButtons.Right)
+            {
+                contextMenuStrip1.Show();
+            }
+        }
+
+        private void 退出ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                MessageShowDlg = new MessageShowForm { label1 = { Text = @"是否确认退出程序？" } };
+                MessageShowDlg.ShowDialog();
+                if (MessageShowDlg.IsSure)
+                {
+                    if (httpthread != null)
+                    {
+                        httpthread.Abort();
+                        httpthread = null;
+                    }
+                    httpServer.StopListen();
+
+                    System.Environment.Exit(0);
+                }
+                else
+                {
+                    //e.Cancel = true;
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
     }
 }

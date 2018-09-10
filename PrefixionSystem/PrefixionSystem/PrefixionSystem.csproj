@@ -36,6 +36,15 @@
   <PropertyGroup>
     <ApplicationIcon>ooopic_1536224388.ico</ApplicationIcon>
   </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>false</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="ControlAstro">
       <HintPath>Dll\ControlAstro.dll</HintPath>
@@ -51,6 +60,11 @@
     </Reference>
     <Reference Include="log4net">
       <HintPath>Dll\LogLib\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Word, Version=12.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <HintPath>Dll\Microsoft.Office.Interop.Word.dll</HintPath>
     </Reference>
     <Reference Include="MySql.Data">
       <HintPath>packages\MySql.Data.6.9.6\lib\net40\MySql.Data.dll</HintPath>
@@ -76,6 +90,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataModule\CreatWord.cs" />
     <Compile Include="DataModule\TEventArgs.cs" />
     <Compile Include="DataModule\ComboBoxHelper.cs" />
     <Compile Include="DataModule\CommonFunc.cs" />
@@ -115,6 +130,12 @@
     </Compile>
     <Compile Include="FrmPart\mainForm.Designer.cs">
       <DependentUpon>mainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmPart\EBMDetailShowForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPart\EBMDetailShowForm.Designer.cs">
+      <DependentUpon>EBMDetailShowForm.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmPart\MessageShowForm.cs">
       <SubType>Form</SubType>
@@ -160,6 +181,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmPart\mainForm.resx">
       <DependentUpon>mainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmPart\EBMDetailShowForm.resx">
+      <DependentUpon>EBMDetailShowForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmPart\MessageShowForm.resx">
       <DependentUpon>MessageShowForm.cs</DependentUpon>
@@ -291,6 +315,9 @@
     <None Include="packages\packages\MySql.Data.6.9.6\MySql.Data.6.9.6.nupkg" />
     <None Include="packages\packages\repositories.config" />
     <None Include="packages\repositories.config" />
+    <None Include="Properties\app.manifest">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
